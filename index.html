@@ -229,16 +229,15 @@ textarea{resize:vertical;min-height:55px;line-height:1.6}
   <!-- IA -->
   <div class="fg">
     <div class="sec-title"><span class="num">1</span>Intelligence artificielle</div>
-    <div class="ai-grid">
-      <button class="ai-btn active" onclick="selAI(this,'claude')" data-ai="claude"><span class="ail">🟠</span>Claude<br/><span style="font-size:9px;opacity:.6">Anthropic</span></button>
-      <button class="ai-btn" onclick="selAI(this,'gpt')" data-ai="gpt"><span class="ail">🟢</span>GPT-4o<br/><span style="font-size:9px;opacity:.6">OpenAI</span></button>
-      <button class="ai-btn" onclick="selAI(this,'gemini')" data-ai="gemini"><span class="ail">🔵</span>Gemini<br/><span style="font-size:9px;opacity:.6">Google</span></button>
+    <div style="background:var(--or3);border:1px solid rgba(184,146,42,.3);border-radius:8px;padding:10px 12px;margin-bottom:8px">
+      <div style="font-size:13px;font-weight:500;color:var(--brun)">🟠 Claude (Anthropic)</div>
+      <div style="font-size:11px;color:var(--gris);margin-top:3px">Propulsé par votre clé API Anthropic</div>
     </div>
     <div class="fg">
-      <label>Modèle</label>
+      <label>Modèle Claude</label>
       <select id="aiModel" onchange="updateCost()">
-        <option value="claude-sonnet-4-20250514">Claude Sonnet 4.6 — $3/$15 /M</option>
-        <option value="claude-haiku-4-5-20251001">Claude Haiku 4.5 — $1/$5 /M</option>
+        <option value="claude-sonnet-4-20250514" selected>Claude Sonnet 4.6 — Meilleure qualité</option>
+        <option value="claude-haiku-4-5-20251001">Claude Haiku 4.5 — Plus économique</option>
       </select>
     </div>
   </div>
