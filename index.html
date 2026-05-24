@@ -214,18 +214,6 @@ textarea{resize:vertical;min-height:55px;line-height:1.6}
 <!-- ── SIDEBAR ── -->
 <aside class="sidebar">
 
-  <!-- SERVEUR -->
-  <div class="fg">
-    <div class="sec-title"><span class="num">0</span>Votre serveur Render</div>
-    <div class="server-box">
-      <label>URL de votre backend Render</label>
-      <input type="text" id="serverUrl" placeholder="https://ebookforge-api.onrender.com" value=""/>
-      <button class="server-test" style="cursor:default">🔌 Tester la connexion</button>
-    </div>
-  </div>
-
-  <div class="divider"></div>
-
   <!-- IA -->
   <div class="fg">
     <div class="sec-title"><span class="num">1</span>Intelligence artificielle</div>
@@ -355,7 +343,7 @@ textarea{resize:vertical;min-height:55px;line-height:1.6}
   <div class="placeholder" id="placeholder">
     <div class="ico">📚</div>
     <h3>Votre ebook apparaîtra ici</h3>
-    <p>Configurez votre serveur Render en haut à gauche, puis remplissez le formulaire et cliquez sur <strong>Générer</strong>.</p>
+    <p>Remplissez le formulaire à gauche et cliquez sur <strong>Générer l'ebook complet</strong>.</p>
     <br/><p style="font-size:11px;color:#bbb">Le chat à droite sera débloqué après la génération pour demander des modifications.</p>
   </div>
 </main>
@@ -371,7 +359,7 @@ textarea{resize:vertical;min-height:55px;line-height:1.6}
     <button class="chat-tab" onclick="switchChatTab(this,'revisions')">📝 Révisions <span id="revCount" style="font-size:10px;background:rgba(184,146,42,.3);border-radius:8px;padding:1px 6px;display:none">0</span></button>
   </div>
   <div class="chat-msgs" id="chatMsgs">
-    <div class="msg system">Bienvenue ! Configurez votre serveur Render, générez un ebook, puis demandez des modifications ici.</div>
+    <div class="msg system">Bienvenue ! Générez votre ebook, puis demandez des modifications ici.</div>
   </div>
   <div class="sugg-area" id="suggArea">
     <div class="sugg-lbl">Suggestions rapides</div>
@@ -423,8 +411,6 @@ const PRICING = {
 
 /* ─ Init ─ */
 window.onload = () => {
-  const saved = localStorage.getItem('ef_server');
-  if (saved) document.getElementById('serverUrl').value = saved;
   setDefaultTitles();
   updateCost();
 };
@@ -436,15 +422,8 @@ function toast(msg, ms=3500) {
   setTimeout(() => t.classList.remove('on'), ms);
 }
 function setP(n) { document.getElementById('pages').value = n; updateCost(); }
-function getServerUrl() {
-  const u = document.getElementById('serverUrl').value.trim().replace(/\/$/, '');
-  return u;
-}
 
 /* ─ Test serveur ─ */
-async function testServer() {
-  const url = getServerUrl();
-  if (!url) { toast('⚠ Entrez l\'URL de votre serveur Render'); return; }
   localStorage.setItem('ef_server', url);
   const el = document.getElementById('serverStatus');
   el.className = 'server-status status-wait';
@@ -455,7 +434,7 @@ async function testServer() {
     if (r.ok) {
       el.className = 'server-status status-ok';
       el.textContent = '✅ Serveur connecté — ' + (d.claude === 'configuré' ? 'Claude OK' : 'Claude manquant');
-      toast('✅ Serveur Render connecté avec succès !');
+      toast('✅ Connecté !');
     } else { throw new Error('Réponse non OK'); }
   } catch(e) {
     el.className = 'server-status status-err';
@@ -466,8 +445,6 @@ async function testServer() {
 
 /* ─ Appel API via backend ─ */
 async function callAPI(messages, systemPrompt = '') {
-  const url = getServerUrl();
-  if (!url) throw new Error('URL du serveur Render manquante. Entrez-la en haut à gauche.');
   const model = document.getElementById('aiModel').value;
   const endpoint = ai === 'claude' ? '/generate/claude' : ai === 'gpt' ? '/generate/gpt' : '/generate/gemini';
   const body = { messages, model, max_tokens: 4000 };
