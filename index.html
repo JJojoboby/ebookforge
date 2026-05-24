@@ -11,23 +11,14 @@
   --or:#B8922A;--or2:#D4A843;--or3:#FDF5E0;
   --brun:#3A2500;--brun2:#6A5030;--brun3:#8B6914;
   --noir:#0D0800;--blanc:#FDFAF5;--gris:#8A7A6A;--gris2:#F2EDE6;
-  --vert:#1A6B45;--rouge:#8B2020;--radius:12px;
+  --vert:#1A6B45;--radius:12px;
 }
 body{font-family:'DM Sans',sans-serif;background:var(--blanc);color:var(--brun);min-height:100vh;display:flex;flex-direction:column}
-
-/* ── HEADER ── */
 header{background:var(--noir);height:58px;display:flex;align-items:center;justify-content:space-between;padding:0 1.5rem;border-bottom:2px solid var(--or);flex-shrink:0}
 .logo{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:700;color:var(--or)}
 .logo span{color:#fff;font-weight:400}
-.server-status{font-size:11px;padding:4px 12px;border-radius:20px;border:1px solid;cursor:pointer;transition:.2s}
-.status-ok{background:rgba(26,107,69,.2);color:#5DCA8A;border-color:rgba(26,107,69,.4)}
-.status-err{background:rgba(139,32,32,.2);color:#E87070;border-color:rgba(139,32,32,.4)}
-.status-wait{background:rgba(184,146,42,.2);color:var(--or2);border-color:rgba(184,146,42,.4)}
-
-/* ── LAYOUT ── */
-.app{display:grid;grid-template-columns:300px 1fr 340px;flex:1;min-height:0;overflow:hidden}
-
-/* ── SIDEBAR ── */
+.netlify-badge{font-size:11px;padding:4px 12px;border-radius:20px;background:rgba(26,107,69,.2);color:#5DCA8A;border:1px solid rgba(26,107,69,.4)}
+.app{display:grid;grid-template-columns:300px 1fr 320px;flex:1;overflow:hidden}
 .sidebar{border-right:1px solid rgba(58,37,0,.1);overflow-y:auto;background:var(--blanc);padding:1.25rem}
 .sec-title{font-family:'Cormorant Garamond',serif;font-size:14px;font-weight:600;color:var(--brun);margin-bottom:9px;padding-bottom:6px;border-bottom:1px solid rgba(58,37,0,.08);display:flex;align-items:center;gap:6px}
 .num{width:18px;height:18px;background:var(--or);color:#fff;border-radius:50%;font-size:10px;display:flex;align-items:center;justify-content:center;font-weight:500;flex-shrink:0}
@@ -37,67 +28,28 @@ input[type=text],input[type=number],select,textarea{width:100%;padding:8px 11px;
 input:focus,select:focus,textarea:focus{border-color:var(--or);box-shadow:0 0 0 3px rgba(184,146,42,.1)}
 textarea{resize:vertical;min-height:55px;line-height:1.6}
 .divider{height:1px;background:rgba(58,37,0,.07);margin:14px 0}
-
-/* Serveur URL */
-.server-box{background:var(--or3);border:1px solid rgba(184,146,42,.3);border-radius:8px;padding:10px 12px;margin-bottom:12px}
-.server-box label{color:var(--brun3);margin-bottom:5px}
-.server-box input{background:#fff;font-size:12px}
-.server-test{width:100%;margin-top:6px;padding:7px;background:var(--brun);color:#fff;border:none;border-radius:7px;cursor:pointer;font-size:12px;font-family:'DM Sans',sans-serif;transition:.2s}
-.server-test:hover{background:var(--brun2)}
-
-/* IA */
-.ai-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:5px;margin-bottom:8px}
-.ai-btn{padding:8px 4px;border:1px solid rgba(58,37,0,.15);border-radius:7px;background:#fff;cursor:pointer;text-align:center;font-size:11px;color:var(--brun2);transition:.2s}
-.ai-btn.active{border:2px solid var(--or);background:var(--or3);color:var(--brun);font-weight:500}
-.ai-btn .ail{font-size:16px;display:block;margin-bottom:2px}
-
-/* Thèmes */
 .theme-grid{display:grid;grid-template-columns:1fr 1fr;gap:5px}
 .th-btn{padding:7px 5px;border:1px solid rgba(58,37,0,.15);border-radius:7px;background:#fff;cursor:pointer;text-align:center;font-size:11px;color:var(--brun2);transition:.2s}
 .th-btn.active{border:2px solid var(--or);background:var(--or3);color:var(--brun);font-weight:500}
 .th-btn .ti{font-size:14px;display:block;margin-bottom:2px}
-
-/* Pages */
-.pages-row{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
-.pages-row input[type=number]{width:80px;font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:700;color:var(--or);text-align:center}
 .pgbtns{display:flex;gap:4px;flex-wrap:wrap;margin-top:6px}
 .pgbtn{padding:3px 9px;border:1px solid rgba(58,37,0,.15);border-radius:5px;background:#fff;cursor:pointer;font-size:11px;color:var(--brun2)}
 .pgbtn:hover{background:var(--or3);border-color:var(--or)}
-
-/* Style */
-.stabs{display:flex;gap:5px;margin-bottom:9px}
-.stab{padding:5px 12px;border:1px solid rgba(58,37,0,.15);border-radius:6px;cursor:pointer;font-size:12px;color:var(--brun2);background:#fff;transition:.2s}
-.stab.active{background:var(--or);color:#fff;border-color:var(--or)}
 .preset-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
 .preset-btn{padding:7px 4px;border:1px solid rgba(58,37,0,.15);border-radius:7px;cursor:pointer;text-align:center;background:#fff;transition:.2s}
 .preset-btn.active{border:2px solid var(--or)}
-.psw{height:28px;border-radius:4px;margin-bottom:4px;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:500}
+.psw{height:28px;border-radius:4px;margin-bottom:4px}
 .plbl{font-size:10px;color:var(--brun2)}
-.custom-panel{display:none;flex-direction:column;gap:8px}
-.custom-panel.show{display:flex}
-.color-row{display:flex;gap:8px;align-items:center}
-.color-row label{width:80px;margin:0;text-transform:none;font-size:11px}
-.color-row input[type=color]{width:36px;height:30px;border-radius:5px;border:1px solid rgba(58,37,0,.2);cursor:pointer;padding:2px}
-.color-row input[type=text]{flex:1;font-size:12px}
-.prev-sw{height:38px;border-radius:7px;display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:13px;font-style:italic;margin-top:6px}
-
-/* Langue */
 .lang-row{display:flex;gap:5px}
 .lang-btn{flex:1;padding:7px;border:1px solid rgba(58,37,0,.15);border-radius:7px;background:#fff;cursor:pointer;font-size:11px;color:var(--brun2);transition:.2s;text-align:center}
 .lang-btn.active{border-color:var(--or);background:var(--or3);color:var(--brun);font-weight:500}
-
-/* Bouton générer */
 .gen-btn{width:100%;padding:13px;background:var(--or);color:#fff;border:none;border-radius:9px;font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:600;cursor:pointer;transition:.2s;position:relative;overflow:hidden;margin-top:4px}
 .gen-btn:hover:not(:disabled){background:#9A7B2F;transform:translateY(-1px)}
 .gen-btn:disabled{opacity:.6;cursor:not-allowed}
 .shine{position:absolute;top:0;left:-100%;width:60%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.3),transparent);animation:shine 2.5s infinite}
 @keyframes shine{to{left:160%}}
 .cost-hint{text-align:center;margin-top:7px;font-size:11px;color:var(--gris)}
-
-/* ── CENTRE ── */
 .center{overflow-y:auto;background:var(--gris2);padding:1.25rem;display:flex;flex-direction:column;gap:1rem}
-
-/* Progress */
 .prog-box{background:#fff;border-radius:var(--radius);padding:1.25rem;display:none}
 .prog-box.on{display:block}
 .prog-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
@@ -116,18 +68,14 @@ textarea{resize:vertical;min-height:55px;line-height:1.6}
 .step.done .step-ico{background:var(--vert);color:#fff}
 @keyframes spin{to{transform:rotate(360deg)}}
 .spin{animation:spin 1s linear infinite;display:inline-block}
-
-/* Preview */
 .prev-box{background:#fff;border-radius:var(--radius);overflow:hidden;display:none}
 .prev-box.on{display:block}
-.prev-head{background:var(--noir);padding:12px 16px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px}
+.prev-head{background:var(--noir);padding:12px 16px;display:flex;align-items:center;justify-content:space-between;gap:8px}
 .prev-title{font-family:'Cormorant Garamond',serif;font-size:14px;color:var(--or)}
-.prev-acts{display:flex;gap:6px;flex-wrap:wrap}
+.prev-acts{display:flex;gap:6px}
 .pbtn{padding:5px 12px;border-radius:6px;font-size:11px;cursor:pointer;border:1px solid;transition:.2s;font-family:'DM Sans',sans-serif}
 .pbtn-dl{background:var(--or);color:#fff;border-color:var(--or)}
-.pbtn-dl:hover{background:#9A7B2F}
 .pbtn-sec{background:transparent;color:rgba(255,255,255,.75);border-color:rgba(255,255,255,.2)}
-.pbtn-sec:hover{background:rgba(255,255,255,.08)}
 .prev-body{max-height:500px;overflow-y:auto}
 .cover-mini{padding:20px;text-align:center;border-bottom:3px solid var(--or)}
 .cover-mini h2{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:700;line-height:1.3;margin-bottom:7px}
@@ -137,26 +85,19 @@ textarea{resize:vertical;min-height:55px;line-height:1.6}
 .chaps{padding:14px 16px}
 .ch-lbl{font-size:10px;text-transform:uppercase;letter-spacing:.5px;color:var(--gris);font-weight:500;margin-bottom:10px}
 .ch-row{display:flex;gap:12px;align-items:flex-start;padding:9px 0;border-bottom:1px solid rgba(58,37,0,.06)}
-.ch-n{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:700;color:var(--or);min-width:26px;padding-top:1px}
+.ch-n{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:700;color:var(--or);min-width:26px}
 .ch-i{flex:1}
 .ch-t{font-family:'Cormorant Garamond',serif;font-size:13px;font-weight:600;color:var(--brun);margin-bottom:2px}
 .ch-d{font-size:11px;color:var(--gris);line-height:1.5}
 .ch-p{font-size:10px;color:var(--or);font-weight:500;margin-top:2px}
-
-/* Placeholder */
 .placeholder{display:flex;flex-direction:column;align-items:center;justify-content:center;background:#fff;border-radius:var(--radius);min-height:380px;padding:50px 30px;text-align:center}
 .placeholder .ico{width:64px;height:64px;background:var(--or3);border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:18px;font-size:28px}
 .placeholder h3{font-family:'Cormorant Garamond',serif;font-size:20px;color:var(--brun);margin-bottom:8px}
 .placeholder p{font-size:13px;color:var(--gris);max-width:300px;line-height:1.6}
-
-/* ── CHAT ── */
 .chat-panel{border-left:1px solid rgba(58,37,0,.1);display:flex;flex-direction:column;background:var(--blanc);overflow:hidden}
 .chat-hdr{padding:12px 14px;border-bottom:1px solid rgba(58,37,0,.1);background:#fff;flex-shrink:0}
 .chat-hdr-title{font-family:'Cormorant Garamond',serif;font-size:15px;font-weight:600;color:var(--brun);margin-bottom:3px}
-.chat-hdr-sub{font-size:11px;color:var(--gris);line-height:1.5}
-.chat-tabs{display:flex;gap:4px;padding:8px 14px;border-bottom:1px solid rgba(58,37,0,.1);background:#fff;flex-shrink:0}
-.chat-tab{padding:5px 12px;border-radius:6px;font-size:12px;cursor:pointer;color:var(--brun2);background:transparent;border:1px solid rgba(58,37,0,.12);transition:.2s}
-.chat-tab.active{background:var(--or);color:#fff;border-color:var(--or)}
+.chat-hdr-sub{font-size:11px;color:var(--gris)}
 .chat-msgs{flex:1;overflow-y:auto;padding:12px 14px;display:flex;flex-direction:column;gap:10px}
 .msg{max-width:90%;font-size:13px;line-height:1.6;padding:9px 12px;border-radius:10px}
 .msg.user{background:var(--or);color:#fff;align-self:flex-end;border-radius:10px 10px 2px 10px}
@@ -171,70 +112,42 @@ textarea{resize:vertical;min-height:55px;line-height:1.6}
 .chips{display:flex;gap:5px;flex-wrap:wrap}
 .chip{padding:4px 10px;background:var(--or3);border:1px solid rgba(184,146,42,.3);border-radius:14px;font-size:11px;color:var(--brun2);cursor:pointer;transition:.2s}
 .chip:hover{background:var(--or);color:#fff}
-.rev-panel{display:none;flex:1;overflow-y:auto;padding:12px 14px;flex-direction:column;gap:8px}
-.rev-panel.show{display:flex}
-.rev-item{background:#fff;border:0.5px solid rgba(58,37,0,.1);border-radius:8px;padding:10px 12px}
-.rev-num{font-size:11px;color:var(--or);font-weight:500}
-.rev-req{font-size:12px;color:var(--brun);margin-top:4px;line-height:1.5}
-.no-rev{text-align:center;padding:40px 20px;color:var(--gris);font-size:13px}
 .chat-input-area{padding:10px 14px;border-top:1px solid rgba(58,37,0,.1);background:#fff;flex-shrink:0}
 .chat-input-wrap{display:flex;gap:8px;align-items:flex-end}
-.chat-input-wrap textarea{flex:1;padding:8px 11px;border:1px solid rgba(58,37,0,.18);border-radius:8px;font-family:'DM Sans',sans-serif;font-size:13px;color:var(--brun);resize:none;min-height:40px;max-height:120px;outline:none;transition:.2s;line-height:1.5}
+.chat-input-wrap textarea{flex:1;padding:8px 11px;border:1px solid rgba(58,37,0,.18);border-radius:8px;font-family:'DM Sans',sans-serif;font-size:13px;color:var(--brun);resize:none;min-height:40px;max-height:120px;outline:none;line-height:1.5}
 .chat-input-wrap textarea:focus{border-color:var(--or)}
-.send-btn{width:36px;height:36px;background:var(--or);border:none;border-radius:8px;cursor:pointer;color:#fff;font-size:16px;flex-shrink:0;display:flex;align-items:center;justify-content:center;transition:.2s}
+.send-btn{width:36px;height:36px;background:var(--or);border:none;border-radius:8px;cursor:pointer;color:#fff;font-size:16px;flex-shrink:0;display:flex;align-items:center;justify-content:center}
 .send-btn:hover{background:#9A7B2F}
 .send-btn:disabled{opacity:.5;cursor:not-allowed}
 .chat-locked{padding:14px;background:var(--gris2);border-top:1px solid rgba(58,37,0,.1);text-align:center;font-size:12px;color:var(--gris);flex-shrink:0;line-height:1.6}
-
-/* Barre coûts */
-.cost-bar{background:var(--noir);border-top:1px solid rgba(184,146,42,.2);padding:6px 16px;display:flex;gap:20px;align-items:center;flex-shrink:0;flex-wrap:wrap;display:none}
-.cost-item{font-size:11px;color:rgba(255,255,255,.5)}
-.cost-item strong{color:var(--or);font-weight:500}
-
-/* Toast */
 .toast{position:fixed;bottom:18px;right:18px;background:var(--brun);color:#fff;padding:10px 16px;border-radius:8px;font-size:12px;z-index:999;transform:translateY(60px);opacity:0;transition:.3s;border-left:3px solid var(--or);max-width:340px;line-height:1.5}
 .toast.on{transform:translateY(0);opacity:1}
-
 @media(max-width:1000px){.app{grid-template-columns:1fr};.chat-panel{display:none}}
-.prev-body::-webkit-scrollbar,.chat-msgs::-webkit-scrollbar,.center::-webkit-scrollbar,.sidebar::-webkit-scrollbar{width:4px}
-.prev-body::-webkit-scrollbar-thumb,.chat-msgs::-webkit-scrollbar-thumb,.center::-webkit-scrollbar-thumb,.sidebar::-webkit-scrollbar-thumb{background:rgba(184,146,42,.3);border-radius:2px}
 </style>
 </head>
 <body>
-
 <header>
   <div class="logo">EbookForge <span>✦ Pro</span></div>
-  <div class="server-status status-wait" id="serverStatus" style="cursor:default">
-    ✅ Netlify Functions — Prêt
-  </div>
+  <div class="netlify-badge">✅ Netlify Functions — Actif</div>
 </header>
-
 <div class="app">
-
-<!-- ── SIDEBAR ── -->
 <aside class="sidebar">
-
-  <!-- IA -->
   <div class="fg">
-    <div class="sec-title"><span class="num">1</span>Intelligence artificielle</div>
-    <div style="background:var(--or3);border:1px solid rgba(184,146,42,.3);border-radius:8px;padding:10px 12px;margin-bottom:8px">
-      <div style="font-size:13px;font-weight:500;color:var(--brun)">🟠 Claude (Anthropic)</div>
-      <div style="font-size:11px;color:var(--gris);margin-top:3px">Propulsé par votre clé API Anthropic</div>
-    </div>
-    <div class="fg">
-      <label>Modèle Claude</label>
-      <select id="aiModel" onchange="updateCost()">
-        <option value="claude-sonnet-4-20250514" selected>Claude Sonnet 4.6 — Meilleure qualité</option>
-        <option value="claude-haiku-4-5-20251001">Claude Haiku 4.5 — Plus économique</option>
-      </select>
+    <div style="background:var(--or3);border:1px solid rgba(184,146,42,.3);border-radius:8px;padding:10px 12px;margin-bottom:4px">
+      <div style="font-size:13px;font-weight:500;color:var(--brun)">🟠 Claude Sonnet / Haiku</div>
+      <div style="font-size:11px;color:var(--gris);margin-top:3px">Propulsé par votre clé API Anthropic via Netlify</div>
     </div>
   </div>
-
-  <div class="divider"></div>
-
-  <!-- THÈME -->
   <div class="fg">
-    <div class="sec-title"><span class="num">2</span>Thème</div>
+    <label>Modèle Claude</label>
+    <select id="aiModel" onchange="updateCost()">
+      <option value="claude-sonnet-4-20250514" selected>Claude Sonnet 4.6 — Meilleure qualité</option>
+      <option value="claude-haiku-4-5-20251001">Claude Haiku 4.5 — Plus économique</option>
+    </select>
+  </div>
+  <div class="divider"></div>
+  <div class="fg">
+    <div class="sec-title"><span class="num">1</span>Thème</div>
     <div class="theme-grid">
       <button class="th-btn active" onclick="selTheme(this,'religion')"><span class="ti">✝</span>Foi & Spiritualité</button>
       <button class="th-btn" onclick="selTheme(this,'business')"><span class="ti">💼</span>Business</button>
@@ -244,25 +157,19 @@ textarea{resize:vertical;min-height:55px;line-height:1.6}
       <button class="th-btn" onclick="selTheme(this,'autre')"><span class="ti">✍</span>Autre thème</button>
     </div>
   </div>
-
   <div class="divider"></div>
-
-  <!-- CONTENU -->
   <div class="fg">
-    <div class="sec-title"><span class="num">3</span>Contenu</div>
+    <div class="sec-title"><span class="num">2</span>Contenu</div>
     <div class="fg"><label>Titre de l'ebook</label><input type="text" id="titre" placeholder="Titre..."/></div>
     <div class="fg"><label>Sous-titre</label><input type="text" id="soustitre" placeholder="Sous-titre..."/></div>
-    <div class="fg"><label>Auteur / Collectif</label><input type="text" id="auteur" placeholder="Ex : Collectif Foi et Religion" value="Collectif Foi et Religion"/></div>
-    <div class="fg"><label>Email de contact</label><input type="text" id="email" placeholder="collectiffoietreligion@gmail.com" value="collectiffoietreligion@gmail.com"/></div>
+    <div class="fg"><label>Auteur / Collectif</label><input type="text" id="auteur" value="Collectif Foi et Religion"/></div>
+    <div class="fg"><label>Email</label><input type="text" id="email" value="collectiffoietreligion@gmail.com"/></div>
   </div>
-
   <div class="divider"></div>
-
-  <!-- PAGES -->
   <div class="fg">
-    <div class="sec-title"><span class="num">4</span>Nombre de pages</div>
-    <div class="pages-row">
-      <input type="number" id="pages" value="80" min="20" max="500" step="10" oninput="updateCost()"/>
+    <div class="sec-title"><span class="num">3</span>Nombre de pages</div>
+    <div style="display:flex;gap:8px;align-items:center">
+      <input type="number" id="pages" value="80" min="20" max="500" step="10" oninput="updateCost()" style="width:80px;font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:700;color:var(--or);text-align:center"/>
       <span style="font-size:12px;color:var(--gris)">pages A4</span>
     </div>
     <div class="pgbtns">
@@ -273,69 +180,47 @@ textarea{resize:vertical;min-height:55px;line-height:1.6}
       <button class="pgbtn" onclick="setP(200)">200p</button>
     </div>
   </div>
-
   <div class="divider"></div>
-
-  <!-- STYLE -->
   <div class="fg">
-    <div class="sec-title"><span class="num">5</span>Style visuel</div>
-    <div class="stabs">
-      <button class="stab active" onclick="switchStyle(this,'preset')">Presets</button>
-      <button class="stab" onclick="switchStyle(this,'custom')">Personnalisé</button>
-    </div>
-    <div id="presetPanel">
-      <div class="preset-grid">
-        <button class="preset-btn active" onclick="selPreset(this,'#0D0800','#C8A84B','#fff')"><div class="psw" style="background:#0D0800;color:#C8A84B">Or & Noir</div><div class="plbl">Luxe</div></button>
-        <button class="preset-btn" onclick="selPreset(this,'#FDF5E0','#5C3A00','#3A2500')"><div class="psw" style="background:#FDF5E0;color:#5C3A00">Parchemin</div><div class="plbl">Classique</div></button>
-        <button class="preset-btn" onclick="selPreset(this,'#1A4A7A','#fff','#E0EEFF')"><div class="psw" style="background:#1A4A7A;color:#fff">Bleu</div><div class="plbl">Pro</div></button>
-        <button class="preset-btn" onclick="selPreset(this,'#1A5C30','#E0F0D0','#E0F0D0')"><div class="psw" style="background:#1A5C30;color:#E0F0D0">Forêt</div><div class="plbl">Nature</div></button>
-        <button class="preset-btn" onclick="selPreset(this,'#6B1A1A','#FAD5B0','#FAD5B0')"><div class="psw" style="background:#6B1A1A;color:#FAD5B0">Rouge</div><div class="plbl">Passion</div></button>
-        <button class="preset-btn" onclick="selPreset(this,'#2D1B5E','#D4AAFF','#D4AAFF')"><div class="psw" style="background:#2D1B5E;color:#D4AAFF">Violet</div><div class="plbl">Mystique</div></button>
-      </div>
-    </div>
-    <div id="customPanel" class="custom-panel">
-      <div class="color-row"><label>Fond</label><input type="color" id="cBg" value="#0D0800" oninput="syncC('cBg','cBgH')"/><input type="text" id="cBgH" value="#0D0800" oninput="syncH('cBgH','cBg')"/></div>
-      <div class="color-row"><label>Titre</label><input type="color" id="cFg" value="#C8A84B" oninput="syncC('cFg','cFgH')"/><input type="text" id="cFgH" value="#C8A84B" oninput="syncH('cFgH','cFg')"/></div>
-      <div class="color-row"><label>Texte</label><input type="color" id="cTx" value="#ffffff" oninput="syncC('cTx','cTxH')"/><input type="text" id="cTxH" value="#ffffff" oninput="syncH('cTxH','cTx')"/></div>
-      <div class="fg"><label>Police</label><select id="fontChoice"><option value="Georgia, serif" selected>Georgia (classique)</option><option value="'Cormorant Garamond', serif">Cormorant Garamond</option><option value="'Times New Roman', serif">Times New Roman</option></select></div>
-      <div class="prev-sw" id="prevSw" style="background:#0D0800;color:#C8A84B">Aperçu du titre</div>
+    <div class="sec-title"><span class="num">4</span>Style visuel</div>
+    <div class="preset-grid">
+      <button class="preset-btn active" onclick="selPreset(this,'#0D0800','#C8A84B','#fff')"><div class="psw" style="background:#0D0800;color:#C8A84B;display:flex;align-items:center;justify-content:center;font-size:9px">Or & Noir</div><div class="plbl">Luxe</div></button>
+      <button class="preset-btn" onclick="selPreset(this,'#FDF5E0','#5C3A00','#3A2500')"><div class="psw" style="background:#FDF5E0;color:#5C3A00;display:flex;align-items:center;justify-content:center;font-size:9px">Parchemin</div><div class="plbl">Classique</div></button>
+      <button class="preset-btn" onclick="selPreset(this,'#1A4A7A','#fff','#E0EEFF')"><div class="psw" style="background:#1A4A7A;color:#fff;display:flex;align-items:center;justify-content:center;font-size:9px">Bleu</div><div class="plbl">Pro</div></button>
+      <button class="preset-btn" onclick="selPreset(this,'#1A5C30','#E0F0D0','#E0F0D0')"><div class="psw" style="background:#1A5C30;color:#E0F0D0;display:flex;align-items:center;justify-content:center;font-size:9px">Forêt</div><div class="plbl">Nature</div></button>
+      <button class="preset-btn" onclick="selPreset(this,'#6B1A1A','#FAD5B0','#FAD5B0')"><div class="psw" style="background:#6B1A1A;color:#FAD5B0;display:flex;align-items:center;justify-content:center;font-size:9px">Rouge</div><div class="plbl">Passion</div></button>
+      <button class="preset-btn" onclick="selPreset(this,'#2D1B5E','#D4AAFF','#D4AAFF')"><div class="psw" style="background:#2D1B5E;color:#D4AAFF;display:flex;align-items:center;justify-content:center;font-size:9px">Violet</div><div class="plbl">Mystique</div></button>
     </div>
   </div>
-
   <div class="divider"></div>
-
-  <!-- OPTIONS -->
   <div class="fg">
-    <div class="sec-title"><span class="num">6</span>Options</div>
+    <div class="sec-title"><span class="num">5</span>Options</div>
     <div class="fg"><label>Langue</label><div class="lang-row">
       <button class="lang-btn active" onclick="selLang(this,'fr')">🇫🇷 Français</button>
       <button class="lang-btn" onclick="selLang(this,'en')">🇬🇧 Anglais</button>
       <button class="lang-btn" onclick="selLang(this,'pt')">🇧🇷 Portugais</button>
     </div></div>
-    <div class="fg"><label>Ton</label><select id="ton"><option value="accessible" selected>Accessible & Grand public</option><option value="academique">Académique & Rigoureux</option><option value="polemique">Polémique & Accrocheur</option><option value="inspire">Inspirant & Motivant</option><option value="pratique">Pratique & Actionnable</option></select></div>
-    <div class="fg"><label>Public cible</label><input type="text" id="public" placeholder="Ex : Croyants africains qui doutent..."/></div>
-    <div class="fg"><label>Instructions spéciales</label><textarea id="instru" placeholder="Thèses à défendre, références à inclure..."></textarea></div>
+    <div class="fg"><label>Ton</label><select id="ton"><option value="accessible" selected>Accessible & Grand public</option><option value="academique">Académique & Rigoureux</option><option value="polemique">Polémique & Accrocheur</option><option value="inspire">Inspirant & Motivant</option></select></div>
+    <div class="fg"><label>Public cible</label><input type="text" id="public" placeholder="Ex : Croyants africains..."/></div>
+    <div class="fg"><label>Instructions spéciales</label><textarea id="instru" placeholder="Thèses à défendre, références..."></textarea></div>
   </div>
-
   <div class="divider"></div>
   <button class="gen-btn" id="genBtn" onclick="generate()"><span class="shine"></span>✦ Générer l'ebook complet</button>
   <div class="cost-hint" id="costHint"></div>
-
 </aside>
 
-<!-- ── CENTRE ── -->
 <main class="center">
   <div class="prog-box" id="progBox">
-    <div class="prog-head"><div class="prog-lbl" id="progLbl">Génération…</div><div class="prog-pct" id="progPct">0%</div></div>
+    <div class="prog-head"><div class="prog-lbl">Génération via Netlify…</div><div class="prog-pct" id="progPct">0%</div></div>
     <div class="prog-track"><div class="prog-fill" id="progFill"></div></div>
     <div class="steps" id="stepsList"></div>
   </div>
   <div class="prev-box" id="prevBox">
     <div class="prev-head">
-      <div class="prev-title" id="prevTitle">Aperçu de l'ebook</div>
+      <div class="prev-title" id="prevTitle">Aperçu</div>
       <div class="prev-acts">
-        <button class="pbtn pbtn-sec" onclick="copyPlan()">📋 Copier plan</button>
-        <button class="pbtn pbtn-dl" onclick="downloadHTML()">⬇ Télécharger HTML</button>
+        <button class="pbtn pbtn-sec" onclick="copyPlan()">📋 Copier</button>
+        <button class="pbtn pbtn-dl" onclick="downloadHTML()">⬇ Télécharger</button>
       </div>
     </div>
     <div class="prev-body" id="prevBody"></div>
@@ -344,433 +229,330 @@ textarea{resize:vertical;min-height:55px;line-height:1.6}
     <div class="ico">📚</div>
     <h3>Votre ebook apparaîtra ici</h3>
     <p>Remplissez le formulaire à gauche et cliquez sur <strong>Générer l'ebook complet</strong>.</p>
-    <br/><p style="font-size:11px;color:#bbb">Le chat à droite sera débloqué après la génération pour demander des modifications.</p>
   </div>
 </main>
 
-<!-- ── CHAT ── -->
 <aside class="chat-panel">
   <div class="chat-hdr">
     <div class="chat-hdr-title">✦ Assistant & Révisions</div>
     <div class="chat-hdr-sub">Demandez des modifications après génération.</div>
   </div>
-  <div class="chat-tabs">
-    <button class="chat-tab active" onclick="switchChatTab(this,'chat')">💬 Chat</button>
-    <button class="chat-tab" onclick="switchChatTab(this,'revisions')">📝 Révisions <span id="revCount" style="font-size:10px;background:rgba(184,146,42,.3);border-radius:8px;padding:1px 6px;display:none">0</span></button>
-  </div>
   <div class="chat-msgs" id="chatMsgs">
-    <div class="msg system">Bienvenue ! Générez votre ebook, puis demandez des modifications ici.</div>
+    <div class="msg system">Générez votre ebook, puis demandez des modifications ici.</div>
   </div>
   <div class="sugg-area" id="suggArea">
-    <div class="sugg-lbl">Suggestions rapides</div>
+    <div class="sugg-lbl">Suggestions</div>
     <div class="chips" id="suggChips"></div>
-  </div>
-  <div class="rev-panel" id="revPanel">
-    <div class="no-rev">Aucune révision pour l'instant.</div>
   </div>
   <div class="chat-input-area">
     <div class="chat-input-wrap">
-      <textarea id="chatInput" placeholder="Posez une question ou demandez une modification..." rows="2" onkeydown="handleKey(event)"></textarea>
-      <button class="send-btn" id="sendBtn" onclick="sendChat()" title="Envoyer">➤</button>
+      <textarea id="chatInput" placeholder="Demandez une modification..." rows="2" onkeydown="handleKey(event)"></textarea>
+      <button class="send-btn" id="sendBtn" onclick="sendChat()">➤</button>
     </div>
   </div>
   <div class="chat-locked" id="chatLocked"><strong>Générez d'abord votre ebook</strong> pour débloquer le chat.</div>
 </aside>
-
 </div>
-
-<!-- BARRE COÛTS -->
-<div class="cost-bar" id="costBar">
-  <div class="cost-item">Chapitres : <strong id="stCh">—</strong></div>
-  <div class="cost-item">Tokens : <strong id="stTok">—</strong></div>
-  <div class="cost-item">Coût : <strong id="stCost">—</strong></div>
-  <div class="cost-item">FCFA : <strong id="stFCFA">—</strong></div>
-  <div class="cost-item">Révisions : <strong id="stRev">0</strong></div>
-</div>
-
 <div class="toast" id="toast"></div>
 
 <script>
-/* ═══ STATE ═══ */
-let ai = 'claude', theme = 'religion', lang = 'fr', styleMd = 'preset';
-let sBg = '#0D0800', sFg = '#C8A84B', sTx = '#fff';
-let plan = null, isRunning = false, chatLocked = true;
-let chatHistory = [], revisions = [];
-let totalTokens = 0, totalCostUSD = 0;
-const FCFA = 600;
+var theme='religion', lang='fr', sBg='#0D0800', sFg='#C8A84B', sTx='#fff';
+var plan=null, isRunning=false, chatLocked=true, chatHistory=[];
+var FCFA=600;
 
-/* ─ Modèles et prix ─ */
-const PRICING = {
-  'claude-sonnet-4-20250514':     { in: 3.00,  out: 15.00 },
-  'claude-haiku-4-5-20251001':    { in: 1.00,  out: 5.00  },
-  'gpt-4o':                       { in: 2.50,  out: 10.00 },
-  'gpt-4o-mini':                  { in: 0.15,  out: 0.60  },
-  'gemini-1.5-pro':               { in: 1.25,  out: 10.00 },
-  'gemini-1.5-flash':             { in: 0.30,  out: 2.50  },
+var PRICING={
+  'claude-sonnet-4-20250514':{inp:3.00,out:15.00},
+  'claude-haiku-4-5-20251001':{inp:1.00,out:5.00}
 };
 
-/* ─ Init ─ */
-window.onload = () => {
-  setDefaultTitles();
-  updateCost();
+var TITLES={
+  religion:["Pourquoi Dieu n'a pas détruit Satan ?","Les questions que personne n'ose poser"],
+  business:["De Zéro à 500 000 FCFA : le guide du business digital africain","Méthodes concrètes depuis votre smartphone"],
+  sante:["Les secrets de la santé naturelle africaine","Guide pratique des plantes médicinales"],
+  devperso:["Brisez vos blocages et devenez la meilleure version de vous","Le manuel de la transformation personnelle"],
+  relation:["L'amour durable : ce que les couples heureux font différemment","Les secrets des relations épanouissantes"],
+  autre:["",""]
 };
 
-/* ─ Util ─ */
-function toast(msg, ms=3500) {
-  const t = document.getElementById('toast');
-  t.textContent = msg; t.classList.add('on');
-  setTimeout(() => t.classList.remove('on'), ms);
-}
-function setP(n) { document.getElementById('pages').value = n; updateCost(); }
+window.onload=function(){setDefaultTitles();updateCost();};
 
-/* ─ Test serveur ─ */
-  localStorage.setItem('ef_server', url);
-  const el = document.getElementById('serverStatus');
-  el.className = 'server-status status-wait';
-  el.textContent = '⏳ Test en cours…';
-  try {
-    const r = await fetch(url + '/', { signal: AbortSignal.timeout(8000) });
-    const d = await r.json();
-    if (r.ok) {
-      el.className = 'server-status status-ok';
-      el.textContent = '✅ Serveur connecté — ' + (d.claude === 'configuré' ? 'Claude OK' : 'Claude manquant');
-      toast('✅ Connecté !');
-    } else { throw new Error('Réponse non OK'); }
-  } catch(e) {
-    el.className = 'server-status status-err';
-    el.textContent = '❌ Serveur non joignable';
-    toast('❌ Impossible de joindre le serveur. Vérifiez l\'URL.', 4000);
-  }
+function toast(msg,ms){
+  ms=ms||3500;
+  var t=document.getElementById('toast');
+  t.textContent=msg;t.classList.add('on');
+  setTimeout(function(){t.classList.remove('on');},ms);
 }
 
-/* ─ Appel API via backend ─ */
-async function callAPI(messages, systemPrompt = '') {
-  const model = document.getElementById('aiModel').value;
-  const endpoint = ai === 'claude' ? '/generate/claude' : ai === 'gpt' ? '/generate/gpt' : '/generate/gemini';
-  const body = { messages, model, max_tokens: 4000 };
-  if (systemPrompt) body.system = systemPrompt;
+function setP(n){document.getElementById('pages').value=n;updateCost();}
 
-  const r = await fetch(endpoint, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(body),
-    signal: AbortSignal.timeout(120000),
-  });
-  const d = await r.json();
-  if (!r.ok) throw new Error(d.error || 'Erreur serveur');
-
-  // Mettre à jour les stats de coût
-  const p = PRICING[model] || PRICING['claude-sonnet-4-20250514'];
-  const inTok  = d.usage?.input_tokens  || 0;
-  const outTok = d.usage?.output_tokens || 0;
-  totalTokens   += inTok + outTok;
-  totalCostUSD  += (p.in * inTok + p.out * outTok) / 1_000_000;
-
-  return d.content;
+function selTheme(el,t){
+  document.querySelectorAll('.th-btn').forEach(function(b){b.classList.remove('active');});
+  el.classList.add('active');theme=t;setDefaultTitles();
 }
 
-/* ─ IA selector ─ */
-function selAI(el, a) {
-  document.querySelectorAll('.ai-btn').forEach(b => b.classList.remove('active'));
-  el.classList.add('active'); ai = a;
-  const sel = document.getElementById('aiModel');
-  if (a === 'claude')  sel.innerHTML = '<option value="claude-sonnet-4-20250514">Claude Sonnet 4.6 — $3/$15 /M</option><option value="claude-haiku-4-5-20251001">Claude Haiku 4.5 — $1/$5 /M</option>';
-  else if (a === 'gpt') sel.innerHTML = '<option value="gpt-4o">GPT-4o — $2.50/$10 /M</option><option value="gpt-4o-mini">GPT-4o Mini — $0.15/$0.60 /M</option>';
-  else                  sel.innerHTML = '<option value="gemini-1.5-pro">Gemini 1.5 Pro — $1.25/$10 /M</option><option value="gemini-1.5-flash">Gemini 1.5 Flash — $0.30/$2.50 /M</option>';
-  updateCost();
+function setDefaultTitles(){
+  var arr=TITLES[theme]||['',''];
+  var tEl=document.getElementById('titre'),sEl=document.getElementById('soustitre');
+  if(!tEl.dataset.edited)tEl.value=arr[0];
+  if(!sEl.dataset.edited)sEl.value=arr[1];
+  tEl.addEventListener('input',function(){tEl.dataset.edited='1';},{once:true});
+  sEl.addEventListener('input',function(){sEl.dataset.edited='1';},{once:true});
 }
 
-/* ─ Thème ─ */
-const TITLES = {
-  religion: ["Pourquoi Dieu n'a pas détruit Satan ?", "Les questions que personne n'ose poser"],
-  business:  ["De Zéro à 500 000 FCFA : le guide du business digital africain", "Méthodes concrètes depuis votre smartphone"],
-  sante:     ["Les secrets de la santé naturelle africaine", "Guide pratique des plantes médicinales"],
-  devperso:  ["Brisez vos blocages et devenez la meilleure version de vous", "Le manuel de la transformation personnelle"],
-  relation:  ["L'amour durable : ce que les couples heureux font différemment", "Les secrets des relations épanouissantes"],
-  autre:     ["", ""],
-};
-function selTheme(el, t) {
-  document.querySelectorAll('.th-btn').forEach(b => b.classList.remove('active'));
-  el.classList.add('active'); theme = t; setDefaultTitles();
-}
-function setDefaultTitles() {
-  const [ti, so] = TITLES[theme] || ['', ''];
-  const tEl = document.getElementById('titre'), sEl = document.getElementById('soustitre');
-  if (!tEl.dataset.edited) tEl.value = ti;
-  if (!sEl.dataset.edited) sEl.value = so;
-  ['titre','soustitre'].forEach(id => {
-    document.getElementById(id).addEventListener('input', function(){ this.dataset.edited = '1'; }, { once: true });
-  });
+function selPreset(el,bg,fg,tx){
+  document.querySelectorAll('.preset-btn').forEach(function(b){b.classList.remove('active');});
+  el.classList.add('active');sBg=bg;sFg=fg;sTx=tx;
 }
 
-/* ─ Coût estimé ─ */
-function updateCost() {
-  const pages = parseInt(document.getElementById('pages').value) || 80;
-  const nbCh  = Math.max(5, Math.round(pages / 6));
-  const outTok = Math.round(pages * 530);
-  const inTok  = 8000 + nbCh * 600;
-  const model  = document.getElementById('aiModel').value;
-  const p      = PRICING[model] || PRICING['claude-sonnet-4-20250514'];
-  const cost   = (p.in * inTok + p.out * outTok) / 1_000_000;
-  document.getElementById('costHint').textContent =
-    `Estimation : ~${((inTok+outTok)/1000).toFixed(0)}K tokens → $${cost.toFixed(3)} (~${Math.round(cost*FCFA)} FCFA)`;
+function selLang(el,l){
+  document.querySelectorAll('.lang-btn').forEach(function(b){b.classList.remove('active');});
+  el.classList.add('active');lang=l;
 }
 
-/* ─ Style ─ */
-function switchStyle(el, md) {
-  document.querySelectorAll('.stab').forEach(t => t.classList.remove('active')); el.classList.add('active'); styleMd = md;
-  document.getElementById('presetPanel').style.display = md === 'preset' ? '' : 'none';
-  const cp = document.getElementById('customPanel'); md === 'custom' ? cp.classList.add('show') : cp.classList.remove('show');
-}
-function selPreset(el, bg, fg, tx) {
-  document.querySelectorAll('.preset-btn').forEach(b => b.classList.remove('active')); el.classList.add('active');
-  sBg = bg; sFg = fg; sTx = tx;
-}
-function syncC(cId, hId) { document.getElementById(hId).value = document.getElementById(cId).value; applyCustom(); }
-function syncH(hId, cId) { const v = document.getElementById(hId).value; if (/^#[0-9A-Fa-f]{6}$/.test(v)) { document.getElementById(cId).value = v; applyCustom(); } }
-function applyCustom() {
-  sBg = document.getElementById('cBgH').value; sFg = document.getElementById('cFgH').value; sTx = document.getElementById('cTxH').value;
-  const sw = document.getElementById('prevSw'); sw.style.background = sBg; sw.style.color = sFg;
-}
-function getStyle() {
-  if (styleMd === 'custom') return { bg: document.getElementById('cBgH').value, fg: document.getElementById('cFgH').value, tx: document.getElementById('cTxH').value, font: document.getElementById('fontChoice').value };
-  return { bg: sBg, fg: sFg, tx: sTx, font: "'Cormorant Garamond', serif" };
+function updateCost(){
+  var pages=parseInt(document.getElementById('pages').value)||80;
+  var nbCh=Math.max(5,Math.round(pages/6));
+  var outTok=Math.round(pages*530);
+  var inTok=8000+nbCh*600;
+  var model=document.getElementById('aiModel').value;
+  var p=PRICING[model]||PRICING['claude-sonnet-4-20250514'];
+  var cost=(p.inp*inTok+p.out*outTok)/1000000;
+  document.getElementById('costHint').textContent='Estimation : ~'+Math.round((inTok+outTok)/1000)+'K tokens → $'+cost.toFixed(3)+' (~'+Math.round(cost*FCFA)+' FCFA)';
 }
 
-/* ─ Langue ─ */
-function selLang(el, l) { document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active')); el.classList.add('active'); lang = l; }
-
-/* ─ Steps progress ─ */
-const STEPS = [
-  { lbl: 'Analyse du sujet et stratégie éditoriale', ico: '🔍' },
-  { lbl: 'Élaboration du plan complet', ico: '📋' },
-  { lbl: 'Structure narrative et chapitrage', ico: '🏗' },
-  { lbl: 'Génération du contenu par l\'IA via votre serveur', ico: '✍' },
-  { lbl: 'Rédaction des extraits et introductions', ico: '📝' },
-  { lbl: 'Création des annexes et du glossaire', ico: '📚' },
-  { lbl: 'Mise en forme et assemblage', ico: '🎨' },
-  { lbl: 'Contrôle qualité final', ico: '✅' },
+var STEPS=[
+  {lbl:'Analyse du sujet',ico:'🔍'},
+  {lbl:'Élaboration du plan',ico:'📋'},
+  {lbl:'Structure narrative',ico:'🏗'},
+  {lbl:'Génération par Claude',ico:'✍'},
+  {lbl:'Rédaction des extraits',ico:'📝'},
+  {lbl:'Création des annexes',ico:'📚'},
+  {lbl:'Mise en forme',ico:'🎨'},
+  {lbl:'Contrôle qualité',ico:'✅'}
 ];
-function renderSteps(cur) {
-  document.getElementById('stepsList').innerHTML = STEPS.map((s, i) => {
-    const st = i < cur ? 'done' : i === cur ? 'active' : 'pending';
-    const ico = st === 'done' ? '✓' : st === 'active' ? `<span class="spin">${s.ico}</span>` : s.ico;
-    return `<div class="step ${st}"><div class="step-ico">${ico}</div><span>${s.lbl}</span></div>`;
+
+function renderSteps(cur){
+  document.getElementById('stepsList').innerHTML=STEPS.map(function(s,i){
+    var st=i<cur?'done':i===cur?'active':'pending';
+    var ico=st==='done'?'✓':st==='active'?'<span class="spin">'+s.ico+'</span>':s.ico;
+    return '<div class="step '+st+'"><div class="step-ico">'+ico+'</div><span>'+s.lbl+'</span></div>';
   }).join('');
 }
-function setProgress(pct, step) {
-  document.getElementById('progFill').style.width = pct + '%';
-  document.getElementById('progPct').textContent = pct + '%';
+
+function setProgress(pct,step){
+  document.getElementById('progFill').style.width=pct+'%';
+  document.getElementById('progPct').textContent=pct+'%';
   renderSteps(step);
 }
 
-/* ─ Prompt ─ */
-function buildPrompt() {
-  const pages = parseInt(document.getElementById('pages').value) || 80;
-  const nbCh  = Math.max(5, Math.round(pages / 6));
-  const tonMap = { accessible: 'accessible et grand public', academique: 'académique et rigoureux', polemique: 'polémique et accrocheur', inspire: 'inspirant et motivant', pratique: 'pratique et actionnable' };
-  const thmMap = { religion: 'Foi, Spiritualité et Théologie', business: 'Business, Argent et Entrepreneuriat', sante: 'Santé naturelle et Bien-être', devperso: 'Développement personnel', relation: 'Relations amoureuses et Couple', autre: 'Sujet libre' };
-  const lngMap = { fr: 'Français', en: 'Anglais', pt: 'Portugais' };
-  return `Tu es un expert en création d'ebooks professionnels pour le marché africain.
-Génère un plan complet pour un ebook de ${pages} pages avec EXACTEMENT ${nbCh} chapitres.
-TITRE : "${document.getElementById('titre').value || 'Guide complet'}"
-SOUS-TITRE : "${document.getElementById('soustitre').value || ''}"
-AUTEUR : "${document.getElementById('auteur').value || 'Auteur'}"
-EMAIL : "${document.getElementById('email').value || ''}"
-THÈME : ${thmMap[theme] || theme}
-LANGUE : ${lngMap[lang] || 'Français'}
-TON : ${tonMap[document.getElementById('ton').value] || 'accessible'}
-PUBLIC : ${document.getElementById('public').value || 'Grand public africain'}
-INSTRUCTIONS : ${document.getElementById('instru').value || 'Aucune'}
-
-Réponds UNIQUEMENT avec un JSON valide, sans backticks ni markdown :
-{"titre":"...","soustitre":"...","auteur":"...","email":"...","pages_total":${pages},"public_cible":"...","promesse":"...","accroche":"...","chapitres":[{"numero":"I","titre":"...","sous_titre":"...","pages":5,"sections":["...","...","...","..."],"extrait":"3 phrases d'introduction réelles et captivantes pour ce chapitre..."}],"annexes":["...","...","...","..."],"mots_cles":["...","...","...","...","..."]}
-Génère exactement ${nbCh} chapitres. Les extraits doivent être réels, de qualité publication, en ${lngMap[lang] || 'Français'}.`;
+function buildPrompt(){
+  var pages=parseInt(document.getElementById('pages').value)||80;
+  var nbCh=Math.max(5,Math.round(pages/6));
+  var tonMap={accessible:'accessible et grand public',academique:'académique et rigoureux',polemique:'polémique et accrocheur',inspire:'inspirant et motivant'};
+  var thmMap={religion:'Foi, Spiritualité et Théologie',business:'Business et Entrepreneuriat',sante:'Santé naturelle',devperso:'Développement personnel',relation:'Relations amoureuses',autre:'Sujet libre'};
+  var lngMap={fr:'Français',en:'Anglais',pt:'Portugais'};
+  return 'Tu es un expert en création d\'ebooks professionnels pour le marché africain.\nGénère un plan complet pour un ebook de '+pages+' pages avec EXACTEMENT '+nbCh+' chapitres.\nTITRE : "'+document.getElementById('titre').value+'"\nSOUS-TITRE : "'+document.getElementById('soustitre').value+'"\nAUTEUR : "'+document.getElementById('auteur').value+'"\nEMAIL : "'+document.getElementById('email').value+'"\nTHEME : '+(thmMap[theme]||theme)+'\nLANGUE : '+(lngMap[lang]||'Français')+'\nTON : '+(tonMap[document.getElementById('ton').value]||'accessible')+'\nPUBLIC : '+(document.getElementById('public').value||'Grand public africain')+'\nINSTRUCTIONS : '+(document.getElementById('instru').value||'Aucune')+'\n\nRéponds UNIQUEMENT avec un JSON valide sans backticks :\n{"titre":"...","soustitre":"...","auteur":"...","email":"...","pages_total":'+pages+',"public_cible":"...","promesse":"...","accroche":"...","chapitres":[{"numero":"I","titre":"...","sous_titre":"...","pages":5,"sections":["...","...","..."],"extrait":"3 phrases d\'introduction réelles et captivantes..."}],"annexes":["...","...","..."],"mots_cles":["...","...","..."]}';
 }
 
-/* ─ Génération principale ─ */
-async function generate() {
-  if (isRunning) return;
-  const titre = document.getElementById('titre').value.trim();
-  if (!titre) { toast('⚠ Saisissez un titre'); return; }
-  isRunning = true; totalTokens = 0; totalCostUSD = 0;
-  const btn = document.getElementById('genBtn');
-  btn.disabled = true; btn.innerHTML = '<span class="shine"></span>⏳ Génération via serveur…';
+function callAPI(messages, systemPrompt, callback) {
+  var model=document.getElementById('aiModel').value;
+  var body={messages:messages,model:model,max_tokens:4000};
+  if(systemPrompt) body.system=systemPrompt;
 
-  document.getElementById('placeholder').style.display = 'none';
+  var xhr=new XMLHttpRequest();
+  xhr.open('POST','/.netlify/functions/claude',true);
+  xhr.setRequestHeader('Content-Type','application/json');
+  xhr.onload=function(){
+    if(xhr.status===200){
+      try{
+        var data=JSON.parse(xhr.responseText);
+        callback(null,data.content);
+      }catch(e){callback('Erreur JSON: '+e.message,null);}
+    }else{
+      try{
+        var err=JSON.parse(xhr.responseText);
+        callback(err.error||'Erreur '+xhr.status,null);
+      }catch(e){callback('Erreur '+xhr.status,null);}
+    }
+  };
+  xhr.onerror=function(){callback('Erreur réseau',null);};
+  xhr.send(JSON.stringify(body));
+}
+
+function generate(){
+  if(isRunning)return;
+  var titre=document.getElementById('titre').value.trim();
+  if(!titre){toast('⚠ Saisissez un titre');return;}
+  isRunning=true;
+  var btn=document.getElementById('genBtn');
+  btn.disabled=true;btn.innerHTML='<span class="shine"></span>⏳ Génération…';
+  document.getElementById('placeholder').style.display='none';
   document.getElementById('prevBox').classList.remove('on');
   document.getElementById('progBox').classList.add('on');
-  setProgress(5, 0);
+  setProgress(5,0);
 
-  const iv = setInterval(() => {
-    const c = parseInt(document.getElementById('progFill').style.width) || 0;
-    if (c < 72) { const n = Math.min(c + Math.random() * 7 + 3, 72); setProgress(Math.round(n), Math.min(Math.floor(n / 10), 6)); }
-  }, 1200);
+  var prog=5;
+  var iv=setInterval(function(){
+    if(prog<72){prog+=Math.random()*7+3;if(prog>72)prog=72;setProgress(Math.round(prog),Math.min(Math.floor(prog/10),6));}
+  },1200);
 
-  try {
-    const raw = await callAPI([{ role: 'user', content: buildPrompt() }]);
-    clearInterval(iv); setProgress(88, 6);
-
-    let p;
-    try { p = JSON.parse(raw.replace(/```json|```/g, '').trim()); }
-    catch { const m = raw.match(/\{[\s\S]*\}/); if (m) p = JSON.parse(m[0]); else throw new Error('JSON invalide'); }
-
-    plan = p; chatHistory = []; revisions = [];
-    setProgress(100, 7);
-    await new Promise(r => setTimeout(r, 400));
-    document.getElementById('progBox').classList.remove('on');
-    renderPreview(p);
-    unlockChat(p);
-    updateCostBar(p);
-    toast('✅ Ebook généré avec succès ! Demandez des modifications dans le chat.', 5000);
-  } catch (err) {
+  callAPI([{role:'user',content:buildPrompt()}],'',function(err,raw){
     clearInterval(iv);
-    document.getElementById('progBox').classList.remove('on');
-    document.getElementById('placeholder').style.display = 'flex';
-    toast('❌ ' + (err.message || 'Erreur'), 5000);
-  }
-
-  isRunning = false;
-  btn.disabled = false; btn.innerHTML = '<span class="shine"></span>✦ Générer l\'ebook complet';
+    if(err){
+      document.getElementById('progBox').classList.remove('on');
+      document.getElementById('placeholder').style.display='flex';
+      toast('❌ '+err,5000);
+      isRunning=false;
+      btn.disabled=false;btn.innerHTML='<span class="shine"></span>✦ Générer l\'ebook complet';
+      return;
+    }
+    setProgress(88,6);
+    var p;
+    try{
+      p=JSON.parse(raw.replace(/```json|```/g,'').trim());
+    }catch(e){
+      var m=raw.match(/\{[\s\S]*\}/);
+      if(m){try{p=JSON.parse(m[0]);}catch(e2){}}
+    }
+    if(!p){
+      document.getElementById('progBox').classList.remove('on');
+      document.getElementById('placeholder').style.display='flex';
+      toast('❌ Réponse JSON invalide. Réessayez.',5000);
+      isRunning=false;btn.disabled=false;btn.innerHTML='<span class="shine"></span>✦ Générer l\'ebook complet';
+      return;
+    }
+    plan=p;chatHistory=[];
+    setTimeout(function(){
+      setProgress(100,7);
+      setTimeout(function(){
+        document.getElementById('progBox').classList.remove('on');
+        renderPreview(p);
+        unlockChat(p);
+        toast('✅ Ebook généré ! Demandez des modifications dans le chat.',5000);
+        isRunning=false;btn.disabled=false;btn.innerHTML='<span class="shine"></span>✦ Générer l\'ebook complet';
+      },400);
+    },600);
+  });
 }
 
-/* ─ Rendu preview ─ */
-function renderPreview(p) {
-  const s = getStyle();
-  const chs = p.chapitres || [];
-  document.getElementById('prevBody').innerHTML = `
-    <div class="cover-mini" style="background:${s.bg};border-color:${s.fg}">
-      <div style="font-size:10px;letter-spacing:2px;color:${s.fg};opacity:.65;margin-bottom:10px;font-family:${s.font}">✦ ${p.pages_total || 80} pages · ${chs.length} chapitres ✦</div>
-      <h2 style="color:${s.fg};font-family:${s.font}">${p.titre || ''}</h2>
-      <div style="font-style:italic;font-size:12px;opacity:.8;margin-bottom:8px;font-family:${s.font};color:${s.tx}">${p.soustitre || ''}</div>
-      <div style="font-size:10px;letter-spacing:1px;opacity:.55;color:${s.tx}">— ${p.auteur || ''} —</div>
-      ${p.accroche ? `<div style="margin-top:10px;font-size:12px;font-style:italic;color:${s.fg};font-family:${s.font}">"${p.accroche}"</div>` : ''}
-    </div>
-    ${chs[0]?.extrait ? `<div class="exc-band" style="background:${s.bg}18"><div class="exc-lbl">✦ Extrait — Chapitre I</div><div class="exc-txt">${chs[0].extrait}</div></div>` : ''}
-    <div class="chaps">
-      ${p.public_cible ? `<div style="margin-bottom:12px;padding:8px 12px;background:var(--or3);border-radius:7px;font-size:12px;color:var(--brun2)">👥 <strong>${p.public_cible}</strong></div>` : ''}
-      <div class="ch-lbl">Plan des ${chs.length} chapitres</div>
-      ${chs.map((ch, i) => `<div class="ch-row" style="animation-delay:${i*40}ms"><div class="ch-n">${ch.numero || i+1}</div><div class="ch-i"><div class="ch-t">${ch.titre || ''}</div><div class="ch-d">${(ch.sections || []).slice(0, 4).join(' · ')}</div><div class="ch-p">≈ ${ch.pages || 4}p</div></div></div>`).join('')}
-      ${(p.annexes || []).length ? `<div style="margin-top:12px;padding-top:10px;border-top:1px solid rgba(58,37,0,.08)"><div style="font-size:10px;text-transform:uppercase;letter-spacing:1px;color:var(--or);font-weight:500;margin-bottom:5px">Annexes</div><div style="font-size:11px;color:var(--gris)">${(p.annexes || []).join(' · ')}</div></div>` : ''}
-      ${p.promesse ? `<div style="margin-top:12px;padding:12px;background:var(--or3);border-radius:7px;border-left:3px solid var(--or)"><div style="font-size:10px;text-transform:uppercase;letter-spacing:1px;color:var(--or);font-weight:500;margin-bottom:4px">Promesse</div><div style="font-size:12px;color:var(--brun);font-style:italic">${p.promesse}</div></div>` : ''}
-    </div>`;
-  document.getElementById('prevTitle').textContent = p.titre || 'Aperçu';
+function renderPreview(p){
+  var chs=p.chapitres||[];
+  document.getElementById('prevBody').innerHTML=
+    '<div class="cover-mini" style="background:'+sBg+';border-color:'+sFg+'">'+
+    '<div style="font-size:10px;letter-spacing:2px;color:'+sFg+';opacity:.65;margin-bottom:10px;font-family:\'Cormorant Garamond\',serif">✦ '+(p.pages_total||80)+' pages · '+chs.length+' chapitres ✦</div>'+
+    '<h2 style="color:'+sFg+';font-family:\'Cormorant Garamond\',serif">'+(p.titre||'')+'</h2>'+
+    '<div style="font-style:italic;font-size:12px;opacity:.8;margin-bottom:8px;font-family:\'Cormorant Garamond\',serif;color:'+sTx+'">'+(p.soustitre||'')+'</div>'+
+    '<div style="font-size:10px;letter-spacing:1px;opacity:.55;color:'+sTx+'">— '+(p.auteur||'')+' —</div>'+
+    (p.accroche?'<div style="margin-top:10px;font-size:12px;font-style:italic;color:'+sFg+';font-family:\'Cormorant Garamond\',serif">"'+p.accroche+'"</div>':'')+
+    '</div>'+
+    (chs[0]&&chs[0].extrait?'<div class="exc-band"><div class="exc-lbl">✦ Extrait — Chapitre I</div><div class="exc-txt">'+chs[0].extrait+'</div></div>':'')+
+    '<div class="chaps"><div class="ch-lbl">Plan des '+chs.length+' chapitres</div>'+
+    chs.map(function(ch,i){return '<div class="ch-row"><div class="ch-n">'+(ch.numero||i+1)+'</div><div class="ch-i"><div class="ch-t">'+(ch.titre||'')+'</div><div class="ch-d">'+((ch.sections||[]).slice(0,3).join(' · '))+'</div><div class="ch-p">≈ '+(ch.pages||4)+'p</div></div></div>';}).join('')+
+    ((p.annexes||[]).length?'<div style="margin-top:12px;padding:10px;background:var(--or3);border-radius:7px"><div style="font-size:10px;color:var(--or);font-weight:500;margin-bottom:5px">ANNEXES</div><div style="font-size:11px;color:var(--gris)">'+(p.annexes||[]).join(' · ')+'</div></div>':'')+
+    (p.promesse?'<div style="margin-top:10px;padding:12px;background:var(--or3);border-radius:7px;border-left:3px solid var(--or)"><div style="font-size:10px;color:var(--or);font-weight:500;margin-bottom:4px">PROMESSE</div><div style="font-size:12px;color:var(--brun);font-style:italic">'+p.promesse+'</div></div>':'')+
+    '</div>';
+  document.getElementById('prevTitle').textContent=p.titre||'Aperçu';
   document.getElementById('prevBox').classList.add('on');
 }
 
-/* ─ Barre de coût ─ */
-function updateCostBar(p) {
-  const pages = p.pages_total || 80;
-  const nbCh  = (p.chapitres || []).length;
-  const outTok = Math.round(pages * 530);
-  const inTok  = 8000 + nbCh * 600;
-  document.getElementById('costBar').style.display = 'flex';
-  document.getElementById('stCh').textContent   = nbCh;
-  document.getElementById('stTok').textContent  = ((totalTokens || inTok + outTok) / 1000).toFixed(0) + 'K';
-  document.getElementById('stCost').textContent = '$' + totalCostUSD.toFixed(4);
-  document.getElementById('stFCFA').textContent = Math.round(totalCostUSD * FCFA).toLocaleString('fr-FR') + ' FCFA';
-}
-
-/* ─ Chat débloqué ─ */
-function unlockChat(p) {
-  chatLocked = false;
-  document.getElementById('chatLocked').style.display = 'none';
-  const suggestions = [
+function unlockChat(p){
+  chatLocked=false;
+  document.getElementById('chatLocked').style.display='none';
+  var suggestions=[
     'Ajoute un chapitre sur les implications pratiques',
-    'Rends le titre encore plus accrocheur',
-    'Développe davantage le chapitre ' + ((p.chapitres || [])[2]?.numero || 'III'),
-    'Change le sous-titre pour quelque chose de plus fort',
-    'Ajoute une annexe avec 30 versets bibliques clés',
-    'Réorganise les chapitres par ordre de difficulté',
+    'Rends le titre plus accrocheur et polémique',
+    'Développe le chapitre '+((p.chapitres||[])[2]||{}).numero,
+    'Ajoute une annexe avec 30 versets bibliques',
+    'Change le sous-titre pour quelque chose de plus fort'
   ];
-  document.getElementById('suggArea').style.display = 'block';
-  document.getElementById('suggChips').innerHTML = suggestions.map(s => `<div class="chip" onclick="useChip('${s.replace(/'/g, "\\'")}')">${s}</div>`).join('');
-  addMsg('ai', `Votre ebook "${p.titre}" est prêt avec ${(p.chapitres || []).length} chapitres ! Je peux modifier le titre, ajouter des chapitres, développer des sections ou changer le ton. Que souhaitez-vous améliorer ?`);
+  document.getElementById('suggArea').style.display='block';
+  document.getElementById('suggChips').innerHTML=suggestions.map(function(s){
+    return '<div class="chip" onclick="useChip(\''+s.replace(/'/g,"\\'")+'\')">' +s+'</div>';
+  }).join('');
+  addMsg('ai','Votre ebook "'+p.titre+'" est prêt avec '+(p.chapitres||[]).length+' chapitres ! Je peux modifier le titre, ajouter des chapitres, changer le ton... Que souhaitez-vous améliorer ?');
 }
 
-function useChip(txt) { document.getElementById('chatInput').value = txt; document.getElementById('chatInput').focus(); }
+function useChip(txt){document.getElementById('chatInput').value=txt;document.getElementById('chatInput').focus();}
 
-/* ─ Chat ─ */
-function switchChatTab(el, tab) {
-  document.querySelectorAll('.chat-tab').forEach(t => t.classList.remove('active')); el.classList.add('active');
-  document.getElementById('chatMsgs').style.display = tab === 'chat' ? '' : 'none';
-  document.getElementById('suggArea').style.display  = tab === 'chat' && !chatLocked ? 'block' : 'none';
-  document.getElementById('chat-input-area') && (document.getElementById('chat-input-area').style.display = tab === 'chat' ? '' : 'none');
-  const rp = document.getElementById('revPanel'); tab === 'revisions' ? rp.classList.add('show') : rp.classList.remove('show');
-}
-function handleKey(e) { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); sendChat(); } }
+function handleKey(e){if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();sendChat();}}
 
-function addMsg(role, text) {
-  const m = document.getElementById('chatMsgs');
-  const div = document.createElement('div'); div.className = 'msg ' + role; div.textContent = text;
-  m.appendChild(div); m.scrollTop = m.scrollHeight; return div;
+function addMsg(role,text){
+  var m=document.getElementById('chatMsgs');
+  var div=document.createElement('div');div.className='msg '+role;div.textContent=text;
+  m.appendChild(div);m.scrollTop=m.scrollHeight;return div;
 }
 
-async function sendChat() {
-  if (chatLocked) { toast('Générez d\'abord votre ebook'); return; }
-  const inp = document.getElementById('chatInput');
-  const msg = inp.value.trim(); if (!msg) return;
-  inp.value = ''; document.getElementById('sendBtn').disabled = true;
-  addMsg('user', msg);
-  const typingDiv = addMsg('ai', ''); typingDiv.innerHTML = '<div class="typing-dot"></div><div class="typing-dot"></div><div class="typing-dot"></div>';
-  chatHistory.push({ role: 'user', content: msg });
-
-  const sys = `Tu es l'assistant éditorial de l'ebook "${plan?.titre || ''}". Plan actuel : ${JSON.stringify({ chapitres: (plan?.chapitres || []).map(c => ({ numero: c.numero, titre: c.titre })), annexes: plan?.annexes })}. Aide l'auteur à améliorer son ebook. Si modification structurelle demandée, propose les données JSON sous [MODIFICATION JSON]: {...}. Réponds en Français.`;
-
-  try {
-    const raw = await callAPI(chatHistory, sys);
-    chatHistory.push({ role: 'assistant', content: raw });
-    let displayText = raw;
-    const jm = raw.match(/\[MODIFICATION JSON\]:\s*(\{[\s\S]*?\})/);
-    if (jm) {
-      try { applyModification(JSON.parse(jm[1])); displayText = raw.replace(/\[MODIFICATION JSON\][\s\S]*/,'').trim() + '\n\n✅ Modification appliquée !'; } catch {}
-    }
-    typingDiv.textContent = displayText;
-    addRevision(msg);
-    updateCostBar(plan);
-  } catch (err) {
-    typingDiv.textContent = '❌ ' + (err.message || 'Erreur'); toast('❌ ' + err.message, 4000);
-  }
-  document.getElementById('sendBtn').disabled = false;
+function sendChat(){
+  if(chatLocked){toast('Générez d\'abord votre ebook');return;}
+  var inp=document.getElementById('chatInput');
+  var msg=inp.value.trim();if(!msg)return;
+  inp.value='';document.getElementById('sendBtn').disabled=true;
+  addMsg('user',msg);
+  var typingDiv=addMsg('ai','');
+  typingDiv.innerHTML='<span class="typing-dot"></span><span class="typing-dot"></span><span class="typing-dot"></span>';
+  chatHistory.push({role:'user',content:msg});
+  var sys='Tu es l\'assistant éditorial de l\'ebook "'+plan.titre+'". Aide l\'auteur à améliorer son ebook. Réponds en Français, sois concis et créatif.';
+  callAPI(chatHistory,sys,function(err,raw){
+    if(err){typingDiv.textContent='❌ '+err;}
+    else{typingDiv.textContent=raw;chatHistory.push({role:'assistant',content:raw});}
+    document.getElementById('sendBtn').disabled=false;
+  });
 }
 
-function applyModification(mod) {
-  if (!plan) return;
-  if (mod.titre)    plan.titre    = mod.titre;
-  if (mod.soustitre) plan.soustitre = mod.soustitre;
-  if (mod.chapitres) plan.chapitres = mod.chapitres;
-  if (mod.annexes)   plan.annexes   = mod.annexes;
-  renderPreview(plan); toast('✅ Ebook mis à jour !');
+function copyPlan(){
+  if(!plan)return;
+  var txt=plan.titre+'\n\n'+(plan.chapitres||[]).map(function(c){return c.numero+'. '+c.titre;}).join('\n');
+  navigator.clipboard.writeText(txt).then(function(){toast('📋 Plan copié !');});
 }
 
-function addRevision(request) {
-  revisions.push(request);
-  const cnt = revisions.length;
-  const rc = document.getElementById('revCount'); rc.textContent = cnt; rc.style.display = 'inline';
-  document.getElementById('stRev').textContent = cnt;
-  const rp = document.getElementById('revPanel');
-  const noRev = rp.querySelector('.no-rev'); if (noRev) noRev.remove();
-  const div = document.createElement('div'); div.className = 'rev-item';
-  div.innerHTML = `<div class="rev-num">Révision #${cnt} — ${new Date().toLocaleTimeString('fr-FR',{hour:'2-digit',minute:'2-digit'})}</div><div class="rev-req">"${request}"</div>`;
-  rp.appendChild(div);
-}
+function downloadHTML(){
+  if(!plan)return;
+  var p=plan;var chs=p.chapitres||[];
+  var chHTML=chs.map(function(ch){
+    return '<div class="chapter-page"><div class="ch-header"><div class="ch-eyebrow">CHAPITRE '+ch.numero+'</div><h2>'+ch.titre+'</h2><div class="ch-subtitle">'+(ch.sous_titre||'')+'</div></div><div class="ch-body">'+
+    (ch.sections||[]).map(function(sec){return '<div class="section"><h3>'+sec+'</h3><p>'+(ch.extrait||'[Développez cette section]')+'</p></div>';}).join('')+
+    '</div></div>';
+  }).join('');
 
-/* ─ Téléchargement ─ */
-function downloadHTML() {
-  if (!plan) return;
-  const s = getStyle(); const p = plan; const chs = p.chapitres || [];
-  const chHTML = chs.map(ch => `<div class="chapter-page"><div class="ch-header"><div class="ch-eyebrow">CHAPITRE ${ch.numero}</div><h2>${ch.titre}</h2><div class="ch-subtitle">${ch.sous_titre||''}</div></div><div class="ch-body">${(ch.sections||[]).map(sec=>`<div class="section"><h3>${sec}</h3><p>${ch.extrait||'[Développez cette section avec votre contenu, exemples et références.]'}</p><p>[Ajoutez ici vos points clés, conseils pratiques et illustrations.]</p></div>`).join('')}</div></div>`).join('');
-  const html = `<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8"/><title>${p.titre||'Mon Ebook'}</title><style>@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400&display=swap');*{box-sizing:border-box;margin:0;padding:0}body{font-family:'DM Sans',sans-serif;color:#2C1600;background:#fff;font-size:11pt;line-height:1.8}.cover-page{background:${s.bg};min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:60px 80px;page-break-after:always}.cover-title{font-family:${s.font};font-size:42px;font-weight:700;color:${s.fg};line-height:1.2;margin-bottom:14px}.cover-sub{font-family:${s.font};font-size:17px;color:${s.tx};opacity:.8;font-style:italic;margin-bottom:30px}.cover-auth{font-size:12px;letter-spacing:2px;color:${s.tx};opacity:.55;text-transform:uppercase}.toc-page{padding:80px;page-break-after:always}.toc-page h2{font-family:${s.font};font-size:32px;color:#3A2500;text-align:center;margin-bottom:36px}.toc-item{display:flex;padding:7px 0;border-bottom:1px dotted rgba(58,37,0,.1);font-size:12px}.toc-num{font-family:${s.font};font-size:17px;font-weight:700;color:${s.fg||'#B8922A'};min-width:36px}.toc-name{flex:1;color:#3A2500}.toc-pg{font-size:11px;color:#8A7A6A}.chapter-page{padding:80px;page-break-before:always}.ch-header{text-align:center;margin-bottom:44px;padding-bottom:26px;border-bottom:2px solid ${s.fg||'#B8922A'}22}.ch-eyebrow{font-size:10px;letter-spacing:3px;color:${s.fg||'#B8922A'};text-transform:uppercase;margin-bottom:10px}.ch-header h2{font-family:${s.font};font-size:30px;font-weight:700;color:#3A2500;line-height:1.3;margin-bottom:8px}.ch-subtitle{font-family:${s.font};font-size:15px;color:#8A7A6A;font-style:italic}.ch-body{max-width:680px;margin:0 auto}.section{margin-bottom:36px}.section h3{font-family:${s.font};font-size:19px;font-weight:600;color:${s.fg||'#B8922A'};margin-bottom:12px}.section p{font-size:12pt;color:#2C1600;line-height:1.9;margin-bottom:12px;text-align:justify;text-indent:2em}.notes-page{padding:80px;page-break-before:always}.notes-page h2{font-family:${s.font};font-size:30px;color:#3A2500;margin-bottom:26px;text-align:center}.note-line{border-bottom:1px solid rgba(58,37,0,.1);height:32px;margin-bottom:4px}.final{background:${s.bg};padding:80px;text-align:center;min-height:40vh;display:flex;flex-direction:column;align-items:center;justify-content:center;page-break-before:always}.final h3{font-family:${s.font};font-size:26px;color:${s.fg};margin-bottom:10px}.final p{color:${s.tx};opacity:.65;font-size:12px}.final .email{color:${s.fg};font-size:14px;margin-top:12px}@page{size:A4;margin:25mm 22mm}</style></head><body><div class="cover-page"><h1 class="cover-title">${p.titre||''}</h1><div class="cover-sub">${p.soustitre||''}</div><div style="width:180px;height:2px;background:${s.fg};opacity:.4;margin:24px auto"></div><div class="cover-auth">— ${p.auteur||''} —</div>${p.accroche?`<div style="margin-top:20px;font-size:14px;font-style:italic;color:${s.fg};font-family:${s.font}">"${p.accroche}"</div>`:''}</div><div class="toc-page"><h2>Table des matières</h2>${chs.map((ch,i)=>`<div class="toc-item"><div class="toc-num">${ch.numero||i+1}</div><div class="toc-name">${ch.titre}</div><div class="toc-pg">${5+i*Math.ceil((p.pages_total||80)/chs.length)}</div></div>`).join('')}</div>${chHTML}<div class="notes-page"><h2>Mes notes personnelles</h2>${Array.from({length:22},()=>'<div class="note-line"></div>').join('')}</div><div class="final"><div style="font-size:20px;color:${s.fg};margin-bottom:14px">✦  ✦  ✦</div><h3>${p.auteur||''}</h3><p>Merci pour votre lecture.</p>${p.email?`<div class="email">${p.email}</div>`:''}<p style="margin-top:12px;font-size:10px">© 2026 — Tous droits réservés</p></div></body></html>`;
-  const blob = new Blob([html], { type: 'text/html;charset=utf-8' });
-  const a = document.createElement('a'); a.href = URL.createObjectURL(blob);
-  a.download = (p.titre||'ebook').replace(/[^\w\s\u00C0-\u024F]/g,'').trim().slice(0,50)+'.html';
-  a.click(); toast('✅ Téléchargé ! Ouvrez dans Chrome → Ctrl+P → PDF A4.', 5000);
-}
+  var html='<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8"/><title>'+p.titre+'</title>'+
+  '<style>body{font-family:Georgia,serif;color:#2C1600;background:#fff;font-size:11pt;line-height:1.8}'+
+  '.cover-page{background:'+sBg+';min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:60px;page-break-after:always}'+
+  '.cover-title{font-size:40px;font-weight:700;color:'+sFg+';line-height:1.2;margin-bottom:14px}'+
+  '.cover-sub{font-size:17px;color:'+sTx+';opacity:.8;font-style:italic;margin-bottom:30px}'+
+  '.cover-auth{font-size:12px;letter-spacing:2px;color:'+sTx+';opacity:.55;text-transform:uppercase}'+
+  '.toc-page{padding:80px;page-break-after:always}'+
+  '.toc-page h2{font-size:32px;color:#3A2500;text-align:center;margin-bottom:36px}'+
+  '.toc-item{display:flex;padding:7px 0;border-bottom:1px dotted rgba(58,37,0,.1);font-size:12px}'+
+  '.toc-num{font-size:17px;font-weight:700;color:'+sFg+';min-width:36px}'+
+  '.toc-name{flex:1;color:#3A2500}'+
+  '.chapter-page{padding:80px;page-break-before:always}'+
+  '.ch-header{text-align:center;margin-bottom:44px;padding-bottom:26px;border-bottom:2px solid '+sFg+'33}'+
+  '.ch-eyebrow{font-size:10px;letter-spacing:3px;color:'+sFg+';text-transform:uppercase;margin-bottom:10px}'+
+  '.ch-header h2{font-size:30px;font-weight:700;color:#3A2500;margin-bottom:8px}'+
+  '.ch-subtitle{font-size:15px;color:#8A7A6A;font-style:italic}'+
+  '.ch-body{max-width:680px;margin:0 auto}'+
+  '.section{margin-bottom:36px}.section h3{font-size:19px;font-weight:600;color:'+sFg+';margin-bottom:12px}'+
+  '.section p{font-size:12pt;color:#2C1600;line-height:1.9;margin-bottom:12px;text-align:justify;text-indent:2em}'+
+  '.notes-page{padding:80px;page-break-before:always}'+
+  '.notes-page h2{font-size:30px;color:#3A2500;margin-bottom:26px;text-align:center}'+
+  '.note-line{border-bottom:1px solid rgba(58,37,0,.1);height:32px;margin-bottom:4px}'+
+  '@page{size:A4;margin:25mm 22mm}</style></head><body>'+
+  '<div class="cover-page"><h1 class="cover-title">'+p.titre+'</h1>'+
+  '<div class="cover-sub">'+(p.soustitre||'')+'</div>'+
+  '<div style="width:180px;height:2px;background:'+sFg+';opacity:.4;margin:24px auto"></div>'+
+  '<div class="cover-auth">— '+(p.auteur||'')+' —</div></div>'+
+  '<div class="toc-page"><h2>Table des matières</h2>'+
+  chs.map(function(ch,i){return '<div class="toc-item"><div class="toc-num">'+(ch.numero||i+1)+'</div><div class="toc-name">'+ch.titre+'</div></div>';}).join('')+
+  '</div>'+chHTML+
+  '<div class="notes-page"><h2>Mes notes personnelles</h2>'+
+  Array.from({length:22},function(){return '<div class="note-line"></div>';}).join('')+
+  '</div></body></html>';
 
-function copyPlan() {
-  if (!plan) return;
-  const txt = `${plan.titre}\n\n` + (plan.chapitres||[]).map(c=>`${c.numero}. ${c.titre}\n   ${(c.sections||[]).join(' | ')}`).join('\n');
-  navigator.clipboard.writeText(txt).then(() => toast('📋 Plan copié !'));
+  var blob=new Blob([html],{type:'text/html;charset=utf-8'});
+  var a=document.createElement('a');a.href=URL.createObjectURL(blob);
+  a.download=(p.titre||'ebook').replace(/[^\w\s]/g,'').trim().slice(0,50)+'.html';
+  a.click();
+  toast('✅ Téléchargé ! Ouvrez dans Chrome → Ctrl+P → PDF A4.',5000);
 }
 </script>
 </body>
